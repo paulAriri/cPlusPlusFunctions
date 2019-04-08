@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    //Program's declared variables
+	int T;
+	double Principal, Rate, Interest, Amount;
+
+	//Program Introduction To User
+	cout << "This program is designed to calculate the final balance in your savings account!" << endl;
+	cout << "Do you wish to continue?" << endl;
+	system("pause");
+
+	//Program's Request For User Input
+	cout << "What is the balance in your account (Principal ($))?" << endl;
+	cin >> Principal;
+
+	cout << "What is your annual interest rate(%)?" << endl;
+	cin >> Rate;
+
+	cout << "How many times does your interest compound in a year($)?" << endl;
+	cin >> T;
+
+	//Program's Calculation and Final Output/Report
+	Amount = Principal * pow(1 + Rate / (T * 100), T);
+	Interest = Amount - Principal;
+	cout << endl;
+
+	cout << "Below is a standard report showing your interest rate, number of times interest compounded, " << endl;
+	cout << "balance in account(principal), interest, and final balance" << endl;
+	cout << endl;
+
+	cout << "Interest Rate:       " << Rate << "%" << endl;
+	cout << "Times Compounded:    " << T << endl;
+	cout << "Principal:           " << "$ " << fixed << showpoint << setprecision(2) << Principal << endl;
+	cout << "Interest:            " << "$ " << fixed << showpoint << setprecision(2) << Interest << endl;
+	cout << "Final Balance:       " << "$ " << fixed << showpoint << setprecision(2) << Amount << endl;
+
+
+	system("pause");
+	return 0;
+}
